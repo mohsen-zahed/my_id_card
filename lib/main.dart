@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_id_card/size_config.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 void main() {
   runApp(
@@ -29,9 +31,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,18 +70,75 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.email_rounded,
-                color: Colors.blue,
-                size: SizeConfig.screenWidth(30),
-              ),
-              const SizedBox(width: 20),
-              Text('mohsenzahed0077@gmail.com'),
-            ],
-          )
+          const SizedBox(height: 20),
+          Text(
+            "Amir Mohsen Zahed",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: SizeConfig.screenWidth(25),
+            ),
+          ),
+          const SizedBox(height: 5),
+          Text(
+            "Mobile App Developer",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: SizeConfig.screenWidth(15),
+            ),
+          ),
+          Container(
+            width: SizeConfig.getProportionateScreenWidth() * 0.4,
+            height: 1,
+            margin: const EdgeInsets.only(top: 5),
+            color: Colors.white,
+          ),
+          const SizedBox(height: 10),
+          Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: SizeConfig.getProportionateScreenWidth() * .15,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.email_rounded,
+                      color: Colors.blue,
+                      size: SizeConfig.screenWidth(30),
+                    ),
+                    const SizedBox(width: 10),
+                    Text(
+                      "mohsenzahed0077@gmail.com",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: SizeConfig.screenWidth(20),
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.phone,
+                      color: Colors.blue,
+                      size: SizeConfig.screenWidth(30),
+                    ),
+                    const SizedBox(width: 10),
+                    Text(
+                      "(+93) 797 627 651",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: SizeConfig.screenWidth(20),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
