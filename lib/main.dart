@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_id_card/size_config.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 void main() {
   runApp(

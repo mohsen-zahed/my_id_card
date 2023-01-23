@@ -14,7 +14,7 @@
   </intent>
 </queries>
    <application
-        android:label="my_id_card"
+        android:label="My ID Card"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
